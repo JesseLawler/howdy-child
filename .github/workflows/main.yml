@@ -17,10 +17,9 @@ jobs:
           fetch-depth: 0
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1.0.3
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.HOWDY_GITHUBREPOREADER_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.HOWDY_GITHUBREPOREADER_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::123456789100:role/my-github-actions-role-NOT-IMPLEMENTED
           aws-region: us-west-2
 
       - name: Sync up to CodeCommit
